@@ -40,7 +40,8 @@ filetype plugin indent on    " required
 " cmd StdinReadPre * let s:std_in=1
 " cmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" autocmd vimenter * NERDTree "opent nerdtree automatisch
+" autocmd vimenter * NERDTree 
+" opent nerdtree automatisch
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "sluit nerdtree automatisch af als een file afgesloten wordt
 
 " YouCompleteMe setting
@@ -68,18 +69,22 @@ set relativenumber				"laat relatieve nummers zien op de ruler
 " worden in het commando
 let mapleader = ","
 noremap ,d dd
-"^ om regel te verwijderen
+" ^ om regel te verwijderen
 noremap ,, :w<enter>
-"^ om op te slaan
+" ^ om op te slaan
 noremap ,n :NERDTreeToggle<enter>
-"^ om nerdtree aan te zetten
+" ^ om nerdtree aan te zetten
 noremap ,f :CtrlP<enter>
-"^ om fuzzy finder te openen
+" ^ om fuzzy finder te openen
 noremap ,p ddp
-"^ swap twee lines
+" ^ swap twee lines
 noremap ,r <c-r>
-"^ redo, ipv undo
+" ^ redo, ipv undo
+noremap ,f <c-f>
+" ^ doet pagina omhoog
+noremap ,b <c-b>
+" ^ doet pagina naar beneden
+noremap ,. "*p
+" ^ om uit standaard register te plakken
 " noremap ,h :set tabstop=8 | set expandtab | set shiftwidth=4 | set shiftround <enter>
-"^ instellingen voor Haskell
-" noremap ,r :set tabstop=4 | set noexpandtab | 
-"^ nog niet af, terug naar standaard instellingen van vim
+" ^ instellingen voor Haskell
